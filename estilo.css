@@ -68,8 +68,8 @@ p {
 }
 
 button {
-    padding: 5px 10px;
-    background-color: #4CAF50;
+    padding: 10px 10px;
+    background-color: #5ca09c;
     color: white;
     border: none;
     cursor: pointer;
@@ -78,7 +78,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #3a6865;
 }
 
 #listado {
@@ -121,11 +121,17 @@ form label {
     display: block;
     margin: 5px 0;
 }
+section {
+    border: #333 solid 1px;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
 
 form input[type="text"],
 form input[type="number"],
 form select {
-    width: 18%;
+    width: 20%;
     padding: 10px;
     margin: 5px 0;
     border: 1px solid #ccc;
@@ -134,4 +140,23 @@ form select {
 
 form button {
     margin-top: 10px;
+}
+
+/* Botón flotante para ir arriba */
+#btnArriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #363fa1;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+#btnArriba:hover {
+    background-color: #0716a1;
 }

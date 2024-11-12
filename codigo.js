@@ -51,6 +51,7 @@ function listarProductos(productos) {
         fotos[nfila].firstChild.setAttribute("onclick", "window.open('" + productos[nfila].image + "');");
         acciones[nfila].innerHTML = "<button onclick='eliminarProducto(" + nfila + ")'>Eliminar</button>";
     }
+    document.getElementById("listado").scrollIntoView({ behavior: 'smooth' });
 }
 
 function obtenerProductos() {
@@ -63,7 +64,7 @@ function obtenerProductos() {
                 producto.price = parseFloat(producto.price);
                 }
             );
-            listarProductos(data) 
+            listarProductos(data);
         })
 }
 
@@ -101,9 +102,20 @@ function agregarProducto() {
 
     productos.push(nuevoProducto);
     listarProductos(productos);
+    document.getElementById("listado").scrollIntoView({ behavior: 'smooth' });
 }
 
 function eliminarProducto(index) {
     productos.splice(index, 1);
     listarProductos(productos);
 }
+
+// Mostrar el botón flotante al hacer scroll
+window.onscroll = function() {
+    var btnArriba = document.getElementById("btnArriba");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btnArriba.style.display = "block";
+    } else {
+        btnArriba.style.display = "none";
+    }
+};
