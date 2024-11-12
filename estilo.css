@@ -2,61 +2,136 @@
 Nombre: Emerson Balmore Arévalo Orellana
 Carnet: AO22002 */
 
-img {width:3cm;height:3cm;}
-table {width:80%;margin:auto;}
-th#price {cursor:pointer;}
-li {color:blue;}
-/*si chequea muestra los productos sin cheque desaparecen los productos*/
-input#c1:checked ~ table tbody tr.c1 { display: table-row; }
-input#c1:not(checked) ~ table tbody tr.c1 { display: none; }
-input#c2:checked ~ table tbody tr.c2 { display: table-row; }
-input#c2:not(checked) ~ table tbody tr.c2 { display: none; }
-input#c3:checked ~ table tbody tr.c3 { display: table-row; }
-input#c3:not(checked) ~ table tbody tr.c3 { display: none; }
-input#c4:checked ~ table tbody tr.c4 { display: table-row; }
-input#c4:not(checked) ~ table tbody tr.c4 { display: none; }
+img {
+    width: 2cm;
+    height: 2cm;
+    cursor: pointer;
+}
 
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
 
-/* estilo para la pagina */
+th#price {
+    cursor: pointer;
+}
+
+li {
+    color: blue;
+}
+
+/* Mostrar u ocultar productos según la categoría seleccionada */
+input#c1:checked ~ table tbody tr.c1 {
+    display: table-row;
+}
+
+input#c1:not(:checked) ~ table tbody tr.c1 {
+    display: none;
+}
+
+input#c2:checked ~ table tbody tr.c2 {
+    display: table-row;
+}
+
+input#c2:not(:checked) ~ table tbody tr.c2 {
+    display: none;
+}
+
+input#c3:checked ~ table tbody tr.c3 {
+    display: table-row;
+}
+
+input#c3:not(:checked) ~ table tbody tr.c3 {
+    display: none;
+}
+
+input#c4:checked ~ table tbody tr.c4 {
+    display: table-row;
+}
+
+input#c4:not(:checked) ~ table tbody tr.c4 {
+    display: none;
+}
+
+/* Estilo para la página */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
 }
+
 p {
     margin: 10px 0;
 }
+
 button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
 }
+
 button:hover {
     background-color: #45a049;
 }
+
 #listado {
     margin-top: 20px;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
+
 th, td {
-    padding: 10px;
+    padding: 5px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
+
 th {
     background-color: #f2f2f2;
 }
+
 th#price {
     cursor: pointer;
 }
+
 input[type="checkbox"] {
     margin-right: 10px;
 }
+
 ol {
+    margin-top: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    margin: 5px 0;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 18%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
     margin-top: 10px;
 }
