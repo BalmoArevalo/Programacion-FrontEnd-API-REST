@@ -7,10 +7,10 @@ var productos = null;
 function codigoCat(catstr) {
 	var code = "null";
 	switch (catstr) {
-		case "electronics": code = "c1"; break;
-		case "jewelery": code = "c2"; break;
-		case "men's clothing": code = "c3"; break;
-		case "women's clothing": code = "c4"; break;
+		case "electronicos": code = "c1"; break;
+		case "joyeria": code = "c2"; break;
+		case "caballeros": code = "c3"; break;
+		case "damas": code = "c4"; break;
 	}
 	return code;
 }
@@ -57,9 +57,17 @@ function listarProductos(productos) {
 }
 
 function obtenerProductos() {
-	fetch('https://fakestoreapi.com/products')
+	fetch("https://api-generator.retool.com/NJcNb8/productos")
 		.then(res => res.json())
-		.then(data => { productos = data; listarProductos(data) })
+		.then(data => { 
+			productos = data; 
+			productos.forEach(	
+				function(producto){
+				producto.price = parseFloat(producto.price);
+				}
+			);
+			listarProductos(data) 
+		})
 }
 
 function ordenarDesc(p_array_json, p_key) {
